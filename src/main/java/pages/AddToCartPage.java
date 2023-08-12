@@ -12,6 +12,7 @@ public class AddToCartPage extends BasePage{
     By AddToCartButton = By.cssSelector("#entry_216842 > button");
     public void clickOnAddToCartButton() {driver.findElement(AddToCartButton).click();}
 
+    //nelamurirea
     By CartButton = By.xpath("/html/body/div[1]/div[9]/header/div[2]/div[2]/div[4]/a");
     public void clickOnTheCartButton() {driver.findElement(CartButton).click();}
 

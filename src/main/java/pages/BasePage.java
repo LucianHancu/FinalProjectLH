@@ -20,8 +20,8 @@ public class BasePage {
         driver.manage().window().maximize();
         driver.get(baseUrl);
     }
-   @AfterMethod
+  /* @AfterMethod
     public void tearDown() {
         driver.quit();
-    }
+    }*/
 }

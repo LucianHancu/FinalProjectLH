@@ -10,7 +10,7 @@ import pages.BasePage;
 
 import java.util.concurrent.TimeUnit;
 
-public class AddToCardTestCase extends BasePage {
+public class AddToCartTestCase extends BasePage {
     private AddToCartPage addToCart;
     @BeforeMethod
     public void setUp() {
@@ -22,11 +22,9 @@ public class AddToCardTestCase extends BasePage {
         addToCart.clickOnTheFirstProduct();
         addToCart.clickOnAddToCartButton();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        //salut Florin. Nu inteleg de ce nu recunoaste partea de clickOnTheCardButton.
-        // Oare ma poti ajuta? Multumesc
         addToCart.clickOnTheCartButton();
         addToCart.clickOnEditCartButton();
-        WebElement checkoutButton = driver.findElement(By.linkText("https://ecommerce-playground.lambdatest.io/index.php?route=checkout/checkout"));
+        WebElement checkoutButton = driver.findElement(By.linkText("Checkout"));
         Assert.assertTrue(checkoutButton.isDisplayed());
     }
 }

@@ -2,6 +2,9 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class AddToCartPage extends BasePage{
     public AddToCartPage(WebDriver driver) {super(driver);}
@@ -12,9 +15,26 @@ public class AddToCartPage extends BasePage{
     By AddToCartButton = By.cssSelector("#entry_216842 > button");
     public void clickOnAddToCartButton() {driver.findElement(AddToCartButton).click();}
 
-    By CartButton = By.xpath("/html/body/div[1]/div[9]/header/div[2]/div[1]/div[5]/a");
+    By CartButton = By.xpath("//*[@id=\"entry_217825\"]/a");
     public void clickOnTheCartButton() {driver.findElement(CartButton).click();}
 
     By EditCartButton = By.cssSelector("#entry_217850 > a");
     public void clickOnEditCartButton() {driver.findElement(EditCartButton).click();}
+
+    By QuantityField = By.cssSelector
+            ("#content > form > div > table > tbody > tr > td:nth-child(4) > div > input");
+    public void updateProductQuantity(String arg1) {driver.findElement(QuantityField).sendKeys(arg1);}
+
+    By UpdateQuantityButton = By.cssSelector
+            ("#content > form > div > table > tbody > tr > td:nth-child(4) > div > div > button.btn.btn-primary");
+    public void clickOnUpdateQuantityButton() {driver.findElement(UpdateQuantityButton).click();}
+
+    By IncreaseItemsButton = By.xpath("//*[@id=\"entry_216841\"]/div/div[2]/button");
+    public void clickOnIncreaseItemsButton() {driver.findElement(IncreaseItemsButton).click();}
+
+    By HomeButton = By.cssSelector("#widget-navbar-217834 > ul > li:nth-child(1) > a");
+    public void clickOnHomeButton() {driver.findElement(HomeButton).click();}
+
 }
+
+

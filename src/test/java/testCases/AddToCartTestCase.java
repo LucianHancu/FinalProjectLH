@@ -55,6 +55,7 @@ public class AddToCartTestCase extends BasePage {
         //nu e varianta corecta cu homebutton
         //addToCart.clickOnHomeButton();
         //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+       // driver.switchTo().frame("notification-box-top");
         addToCart.clickOnTheCartButton();
         addToCart.clickOnEditCartButton();
         WebElement itemsNumberCheck = driver.findElement

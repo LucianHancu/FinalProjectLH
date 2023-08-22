@@ -22,7 +22,7 @@ public class RegisterAccountTestCase extends BasePage {
         register.clickOnContinueButton();
         register.enterFirstName("Prenume");
         register.enterLastName("Nume");
-        register.enterEmail("adresa.email2@gmail.com");
+        register.enterEmail("adresa.email13@gmail.com");
         register.enterTelephoneNumber("12334567890");
         register.enterPassword("parolaTest");
         register.enterPasswordConfirmation("parolaTest");

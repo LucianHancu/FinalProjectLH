@@ -31,6 +31,7 @@ public class RemoveFromWishlistTestCase extends BasePage {
         remove.clickOnSoftwareCategory();
         remove.clickOnProduct3();
         remove.addToWishlistButton();
+        remove.clickOnHomeButton();
         remove.clickOnTheMyAccountButton();
         remove.clickOnWishlistButton();
         remove.clickOnRemoveFromWishlistButton();

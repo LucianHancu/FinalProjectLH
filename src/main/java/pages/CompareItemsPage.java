@@ -19,5 +19,7 @@ public class CompareItemsPage extends BasePage{
     public void clickOnCompareProduct2() {driver.findElement(CompareProduct2).click();}
     By CompareButton = By.cssSelector("#entry_217823 > a");
     public void clickOnCompareButton() {driver.findElement(CompareButton).click();}
+    By HomeButton = By.cssSelector("#widget-navbar-217834 > ul > li:nth-child(1) > a");
+    public void clickOnHomeButton() {driver.findElement(HomeButton).click();}
 
 }

@@ -18,15 +18,32 @@ public class DeleteItemsFromCartTestCase extends BasePage {
         deleteItems = new DeleteItemsFromCartPage(driver);
     }
     @Test
-    public void deleteItemsFromCartTest() throws InterruptedException{
+    public void deleteAllItemsFromCartTest() throws InterruptedException{
         deleteItems.clickOnTheFirstProduct();
         deleteItems.clickOnAddToCartButton();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        deleteItems.clickOnHomeButton();
         deleteItems.clickOnTheCartButton();
         deleteItems.clickOnEditCartButton();
         deleteItems.clickOnDeleteItemsButton();
         WebElement errorMesage = driver.findElement(By.xpath("//*[@id=\"content\"]/p"));
         Assert.assertEquals(errorMesage.getText(), "Your shopping cart is empty!");
+    }
+
+    @Test
+    public void deleteAnItemFromCartTest() throws InterruptedException{
+        deleteItems.clickOnTheFirstProduct();
+        deleteItems.clickOnAddToCartButton();
+        deleteItems.openCategoriesList();
+        deleteItems.openCamerasCategory();
+        deleteItems.clickOnTheSecondProduct();
+        deleteItems.clickOnAddToCartButton();
+        deleteItems.clickOnHomeButton();
+        deleteItems.clickOnTheCartButton();
+        deleteItems.clickOnEditCartButton();
+        deleteItems.clickOnDeleteItemsButton();
+        //nu isi da refresh pagina suficient de repede ca sa recunoasca update-ul din cos?
+        WebElement itemsLeftInCart = driver.findElement(By.cssSelector("#entry_217825 > a > div.cart-icon > span"));
+        Assert.assertEquals(itemsLeftInCart.getText(), "1");
     }
 
 }

@@ -7,8 +7,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.AddToWishlistPage;
 import pages.BasePage;
-
-import java.util.Base64;
 import java.util.concurrent.TimeUnit;
 
 public class AddToWishlistTestCase extends BasePage {
@@ -29,7 +27,7 @@ public class AddToWishlistTestCase extends BasePage {
         wishlist.clickOnMP3PlayerCategory();
         wishlist.clickOnProduct1();
         wishlist.clickOnAddProduct1ToWishlist();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        wishlist.clickOnHomeButton();
         wishlist.clickOnWishlistButton();
         WebElement wishlistProduct = driver.findElement(By.linkText("iPod Shuffle"));
         Assert.assertTrue(wishlistProduct.isDisplayed());

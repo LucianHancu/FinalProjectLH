@@ -27,7 +27,7 @@ public class CheckoutWithItemInCartTestCase extends BasePage {
         checkout.clickOnTheHomePageButton();
         checkout.clickOnTheFirstProduct();
         checkout.clickOnAddToCartButton();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        checkout.clickOnTheHomePageButton();
         checkout.clickOnTheCartButton();
         checkout.clickOnEditCartButton();
         checkout.clickOnCheckoutButton();

@@ -24,12 +24,17 @@ public class WishlistToCartTestCase extends BasePage {
         wishToCart.enterEmailAdress("lucian.hancu@yahoo.com");
         wishToCart.enterPassword("parolaTest");
         wishToCart.clickOnTheSubmitLoginButton();
+        wishToCart.openCategoriesList();
+        wishToCart.openPhoneTabletCategory();
+        wishToCart.clickOnAnItem();
+        wishToCart.clickOnAddToWishlistButtoN();
+        wishToCart.clickOnHomeButton();
         wishToCart.clickOnWishlistButton();
         wishToCart.clickOnAddToCartButton();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        wishToCart.clickOnHomeButton();
         wishToCart.clickOnCartButton();
         wishToCart.clickOnEditCartButton();
-        WebElement productInCart = driver.findElement(By.linkText("iPod Shuffle"));
+        WebElement productInCart = driver.findElement(By.linkText("iPod Touch"));
         Assert.assertTrue(productInCart.isDisplayed());
     }
 }

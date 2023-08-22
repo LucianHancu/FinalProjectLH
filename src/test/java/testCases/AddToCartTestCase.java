@@ -2,16 +2,11 @@ package testCases;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.AddToCartPage;
 import pages.BasePage;
-
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class AddToCartTestCase extends BasePage {
     private AddToCartPage addToCart;
@@ -24,7 +19,7 @@ public class AddToCartTestCase extends BasePage {
     public void addToCartTest() throws InterruptedException{
         addToCart.clickOnTheFirstProduct();
         addToCart.clickOnAddToCartButton();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        addToCart.clickOnHomeButton();
         addToCart.clickOnTheCartButton();
         addToCart.clickOnEditCartButton();
         WebElement checkoutButton = driver.findElement(By.linkText("Checkout"));
@@ -36,7 +31,7 @@ public class AddToCartTestCase extends BasePage {
     public void updateInCartProductsTest() throws InterruptedException{
         addToCart.clickOnTheFirstProduct();
         addToCart.clickOnAddToCartButton();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        addToCart.clickOnHomeButton();
         addToCart.clickOnTheCartButton();
         addToCart.clickOnEditCartButton();
         addToCart.updateProductQuantity("2");
@@ -52,14 +47,9 @@ public class AddToCartTestCase extends BasePage {
         addToCart.clickOnIncreaseItemsButton();
         addToCart.clickOnIncreaseItemsButton();
         addToCart.clickOnAddToCartButton();
-        //nu e varianta corecta cu homebutton
-        //addToCart.clickOnHomeButton();
-        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-       // driver.switchTo().frame("notification-box-top");
-        addToCart.clickOnTheCartButton();
-        addToCart.clickOnEditCartButton();
+        addToCart.clickOnHomeButton();
         WebElement itemsNumberCheck = driver.findElement
-                (By.cssSelector("#content > form > div > table > tbody > tr > td:nth-child(4) > div > input"));
+                (By.cssSelector("#entry_217825 > a > div.cart-icon > span"));
         Assert.assertEquals(itemsNumberCheck.getText(), "3");
     }
 }

@@ -32,4 +32,6 @@ public class AddToWishlistPage extends BasePage{
 
     By WishlistButton = By.cssSelector("#entry_217824 > a");
     public void clickOnWishlistButton() {driver.findElement(WishlistButton).click();}
+    By HomeButton = By.cssSelector("#widget-navbar-217834 > ul > li:nth-child(1) > a");
+    public void clickOnHomeButton() {driver.findElement(HomeButton).click();}
 }

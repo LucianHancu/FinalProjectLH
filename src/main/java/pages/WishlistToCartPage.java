@@ -28,4 +28,15 @@ public class WishlistToCartPage extends BasePage{
     public void clickOnCartButton() {driver.findElement(CartButton).click();}
     By EditCartButton = By.cssSelector("#entry_217850 > a");
     public void clickOnEditCartButton() {driver.findElement(EditCartButton).click();}
+    By HomeButton = By.cssSelector("#widget-navbar-217834 > ul > li:nth-child(1) > a");
+    public void clickOnHomeButton() {driver.findElement(HomeButton).click();}
+    By PhoneTabletsCategory = By.cssSelector("#widget-navbar-217841 > ul > li:nth-child(3) > a");
+    public void openPhoneTabletCategory() {driver.findElement(PhoneTabletsCategory).click();}
+    By Item = By.id("mz-product-grid-image-32-212408");
+    public void clickOnAnItem() {driver.findElement(Item).click();}
+    By AddItemToWishlist = By.cssSelector("#image-gallery-216811 > div.image-thumb.d-flex > button");
+    public void clickOnAddToWishlistButtoN() {driver.findElement(AddItemToWishlist).click();}
+    By CategoriesList = By.cssSelector("#entry_217832 > a");
+    public void openCategoriesList() {driver.findElement(CategoriesList).click();}
+
 }

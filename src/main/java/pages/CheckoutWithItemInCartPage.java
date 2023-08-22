@@ -41,4 +41,5 @@ public class CheckoutWithItemInCartPage extends BasePage{
 
     By ConfirmOrderButton = By.id("button-confirm");
     public void clickOnConfirmOrderButton() {driver.findElement(ConfirmOrderButton).click();}
+
 }

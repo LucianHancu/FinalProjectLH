@@ -36,4 +36,6 @@ public class RemoveFromWishlistPage extends BasePage{
     By RemoveFromWishlistButton = By.cssSelector
             ("#content > div.table-responsive > table > tbody > tr > td.text-right.text-nowrap > a");
     public void clickOnRemoveFromWishlistButton() {driver.findElement(RemoveFromWishlistButton).click();}
+    By HomeButton = By.cssSelector("#widget-navbar-217834 > ul > li:nth-child(1) > a");
+    public void clickOnHomeButton() {driver.findElement(HomeButton).click();}
 }

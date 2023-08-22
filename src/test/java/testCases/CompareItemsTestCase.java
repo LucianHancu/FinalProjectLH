@@ -25,6 +25,7 @@ public class CompareItemsTestCase extends BasePage {
         compare.clickOnLaptopsPage();
         compare.clickOnProduct2();
         compare.clickOnCompareProduct2();
+        compare.clickOnHomeButton();
         compare.clickOnCompareButton();
         WebElement product1 = driver.findElement(By.linkText("HTC Touch HD"));
         WebElement product2 = driver.findElement(By.linkText("Palm Treo Pro"));

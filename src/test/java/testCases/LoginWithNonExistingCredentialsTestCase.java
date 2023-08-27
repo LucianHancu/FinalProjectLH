@@ -6,7 +6,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.BasePage;
-import pages.LoginWithExistingCredentialsPage;
 import pages.LoginWithNonExistingCredentialsPage;
 
 public class LoginWithNonExistingCredentialsTestCase extends BasePage {

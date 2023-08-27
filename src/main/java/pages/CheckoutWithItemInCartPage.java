@@ -24,7 +24,7 @@ public class CheckoutWithItemInCartPage extends BasePage{
 
     By AddToCartButton = By.cssSelector("#entry_216842 > button");
     public void clickOnAddToCartButton() {driver.findElement(AddToCartButton).click();}
-    By CartButton = By.xpath("/html/body/div[1]/div[9]/header/div[2]/div[1]/div[5]/a");
+    By CartButton = By.cssSelector("#entry_217825 > a > div.cart-icon");
     public void clickOnTheCartButton() {driver.findElement(CartButton).click();}
 
     By EditCartButton = By.cssSelector("#entry_217850 > a");

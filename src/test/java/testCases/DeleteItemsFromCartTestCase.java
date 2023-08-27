@@ -1,7 +1,9 @@
 package testCases;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -25,8 +27,10 @@ public class DeleteItemsFromCartTestCase extends BasePage {
         deleteItems.clickOnTheCartButton();
         deleteItems.clickOnEditCartButton();
         deleteItems.clickOnDeleteItemsButton();
-        WebElement errorMesage = driver.findElement(By.xpath("//*[@id=\"content\"]/p"));
-        Assert.assertEquals(errorMesage.getText(), "Your shopping cart is empty!");
+        driver.navigate().refresh();
+        WebElement itemsLeftInCart = driver.findElement
+                (By.cssSelector("#entry_217825 > a > div.cart-icon > span"));
+        Assert.assertEquals(itemsLeftInCart.getText(), "0");
     }
 
     @Test
@@ -41,8 +45,9 @@ public class DeleteItemsFromCartTestCase extends BasePage {
         deleteItems.clickOnTheCartButton();
         deleteItems.clickOnEditCartButton();
         deleteItems.clickOnDeleteItemsButton();
-        //nu isi da refresh pagina suficient de repede ca sa recunoasca update-ul din cos?
-        WebElement itemsLeftInCart = driver.findElement(By.cssSelector("#entry_217825 > a > div.cart-icon > span"));
+        driver.navigate().refresh();
+        WebElement itemsLeftInCart = driver.findElement
+                (By.cssSelector("#entry_217825 > a > div.cart-icon > span"));
         Assert.assertEquals(itemsLeftInCart.getText(), "1");
     }
 

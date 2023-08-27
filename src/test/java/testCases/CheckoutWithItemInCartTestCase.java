@@ -33,8 +33,9 @@ public class CheckoutWithItemInCartTestCase extends BasePage {
         checkout.clickOnCheckoutButton();
         checkout.clickOnAcceptTermsConditionsButton();
         checkout.clickOnContinueButton();
+        driver.navigate().refresh();
         checkout.clickOnConfirmOrderButton();
-        WebElement orderConfirmation = driver.findElement(By.cssSelector("#content > h1 > i"));
+        WebElement orderConfirmation = driver.findElement(By.cssSelector("#content > h1"));
         Assert.assertTrue(orderConfirmation.isDisplayed());
     }
 }

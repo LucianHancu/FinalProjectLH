@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.AddToWishlistPage;
 import pages.BasePage;
-import java.util.concurrent.TimeUnit;
+
 
 public class AddToWishlistTestCase extends BasePage {
     private AddToWishlistPage wishlist;

@@ -26,7 +26,7 @@ public DeleteItemsFromCartPage(WebDriver driver) {super(driver);}
     By CategoriesList = By.cssSelector("#entry_217832 > a");
     public void openCategoriesList() {driver.findElement(CategoriesList).click();}
 
-    By CamerasCategory = By.xpath("//*[@id=\"widget-navbar-217841\"]/ul/li[2]/a");
+    By CamerasCategory = By.cssSelector("#widget-navbar-217841 > ul > li:nth-child(2) > a");
     public void openCamerasCategory() {driver.findElement(CamerasCategory).click();}
     By AddSecondProduct = By.id("mz-product-grid-image-29-212408");
     public void clickOnTheSecondProduct() {driver.findElement(AddSecondProduct).click();}

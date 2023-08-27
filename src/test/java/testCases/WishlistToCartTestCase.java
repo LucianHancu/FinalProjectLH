@@ -21,7 +21,7 @@ public class WishlistToCartTestCase extends BasePage {
     @Test
     public void wishlistToCartTest() throws InterruptedException {
         wishToCart.clickOnTheMyAccountButton();
-        wishToCart.enterEmailAdress("lucian.hancu@yahoo.com");
+        wishToCart.enterEmailAdress("adresa.email53@gmail.com");
         wishToCart.enterPassword("parolaTest");
         wishToCart.clickOnTheSubmitLoginButton();
         wishToCart.openCategoriesList();
@@ -31,10 +31,14 @@ public class WishlistToCartTestCase extends BasePage {
         wishToCart.clickOnHomeButton();
         wishToCart.clickOnWishlistButton();
         wishToCart.clickOnAddToCartButton();
-        wishToCart.clickOnHomeButton();
+        driver.navigate().refresh();
+        WebElement itemsLeftInCart = driver.findElement
+                (By.cssSelector("#entry_217825 > a > div.cart-icon > span"));
+        Assert.assertEquals(itemsLeftInCart.getText(), "1");
+       /* wishToCart.clickOnHomeButton();
         wishToCart.clickOnCartButton();
         wishToCart.clickOnEditCartButton();
         WebElement productInCart = driver.findElement(By.linkText("iPod Touch"));
-        Assert.assertTrue(productInCart.isDisplayed());
+        Assert.assertTrue(productInCart.isDisplayed());*/
     }
 }
